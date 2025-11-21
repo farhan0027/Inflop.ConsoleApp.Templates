@@ -1,0 +1,109 @@
+name: Publish to NuGet
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Package version (leave empty to use version from .csproj)'
+        required: false
+        type: string
+      prerelease:
+        description: 'Is this a pre-release version?'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  publish:
+    name: Build and Publish to NuGet
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Display .NET version
+        run: dotnet --version
+
+      - name: Make scripts executable
+        run: chmod +x scripts/sync-shared-files.sh
+
+      - name: Sync shared files
+        run: ./scripts/sync-shared-files.sh
+        working-directory: .
+
+      - name: Update version in .csproj (if version specified)
+        if: ${{ inputs.version != '' }}
+        run: |
+          echo "Updating package version to ${{ inputs.version }}"
+          sed -i "s|<PackageVersion>.*</PackageVersion>|<PackageVersion>${{ inputs.version }}</PackageVersion>|g" src/Inflop.ConsoleApp.Templates.csproj
+          grep "PackageVersion" src/Inflop.ConsoleApp.Templates.csproj
+
+      - name: Get package version
+        id: get-version
+        run: |
+          VERSION=$(grep -oP '<PackageVersion>\K[^<]+' src/Inflop.ConsoleApp.Templates.csproj)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Package version: $VERSION"
+
+      - name: Pack template package
+        run: dotnet pack src/Inflop.ConsoleApp.Templates.csproj -c Release --output ./artifacts
+
+      - name: List package files
+        run: ls -lh ./artifacts/
+
+      - name: Validate package exists
+        run: |
+          PACKAGE_FILE="./artifacts/Inflop.ConsoleApp.Templates.${{ steps.get-version.outputs.version }}.nupkg"
+          if [ ! -f "$PACKAGE_FILE" ]; then
+            echo "❌ Package file not found: $PACKAGE_FILE"
+            exit 1
+          fi
+          echo "✅ Package file found: $PACKAGE_FILE"
+
+      - name: Publish to NuGet.org
+        run: |
+          dotnet nuget push ./artifacts/*.nupkg \
+            --api-key ${{ secrets.NUGET_API_KEY }} \
+            --source https://api.nuget.org/v3/index.json \
+            --skip-duplicate
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+
+      - name: Create GitHub Release Tag
+        if: ${{ inputs.prerelease == false }}
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git tag -a "v${{ steps.get-version.outputs.version }}" -m "Release v${{ steps.get-version.outputs.version }}"
+          git push origin "v${{ steps.get-version.outputs.version }}"
+
+      - name: Upload package artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nuget-package-${{ steps.get-version.outputs.version }}
+          path: ./artifacts/*.nupkg
+          retention-days: 30
+
+      - name: Publish summary
+        run: |
+          echo "## 🚀 NuGet Package Published Successfully" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Package:** Inflop.ConsoleApp.Templates" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** ${{ steps.get-version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Pre-release:** ${{ inputs.prerelease }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📦 Installation" >> $GITHUB_STEP_SUMMARY
+          echo '```bash' >> $GITHUB_STEP_SUMMARY
+          echo "dotnet new install Inflop.ConsoleApp.Templates::${{ steps.get-version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔗 Links" >> $GITHUB_STEP_SUMMARY
+          echo "- [NuGet Gallery](https://www.nuget.org/packages/Inflop.ConsoleApp.Templates/${{ steps.get-version.outputs.version }})" >> $GITHUB_STEP_SUMMARY
+          echo "- [Package Download](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
