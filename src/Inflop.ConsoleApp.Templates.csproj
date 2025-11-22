@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <PackageType>Template</PackageType>
-        <PackageVersion>1.0.1</PackageVersion>
+        <PackageVersion>1.0.0</PackageVersion>
         <PackageId>Inflop.ConsoleApp.Templates</PackageId>
         <Title>Inflop Console Application Templates</Title>
         <Authors>Inflop</Authors>
